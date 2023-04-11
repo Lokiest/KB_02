@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+h3{color: red; background-color: blue}
+
+h2, h3{font-family: 궁서체}
+
+#a{width: 400px; height: 100px; border: solid 2px yellow;}
+
+.a{background-color: blue; color:red; opacity: 0.5;}
+
+.b{font-size: 25px; font-style: italic;}
+
+div p {color: #FA9884;}
+
+div>p {background-color: #DDFFBB;}
+
+table{
+	border: solid red 1px;
+	width: 400px;
+	height: 400px;
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid grey;
+	text-align: center;	
+}
+
+table tr td:first-child {
+	width: 200px;
+}
+
+table tr td:last-child {
+	width: 50px;
+}
+
+table tr:nth-child(2n) {
+	background-color: orange;
+	color: white;
+}
+
+</style>
+</head>
+<body>
+<h1 id="a">CSS adaptation method</h1>
+<h3 class='a b'>CSS adaptation method</h3>
+<h2 class='a'>CSS adaptation method</h2>
+
+<div class='a'>div tag</div>
+<hr>
+
+<div>
+	<h2>my name</h2>
+	<p>is park</p>
+</div>
+
+<div>
+	<span>
+		<p>i will not be styled</p>
+	</span>
+	
+	<p>something</p>
+</div>
+<hr>
+<hr>
+<table>
+	<tr style="height: 100px;">
+		<td style="text-align: right; vertical-align: middle;">1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+</table>
+
+</body>
+</html>

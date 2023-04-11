@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	.container {
+		background-color: skyblue;
+		height: 100vh;
+		display: flex;
+		/* flex-direction: row-reverse;
+		flex-wrap: wrap; */
+		/* flex-flow: row wrap;
+		justify-content: space-between; */
+	}
+	
+	.container .item{
+		width: 60px;
+		height: 60px;
+		border: 1px solid black;
+	}
+	
+	.container .item.item1{
+		background-color: orange;
+		flex-grow: 1;
+	}
+	
+	.container .item.item2{
+		background-color: blue;
+		flex-grow: 2;
+	}
+	
+	.container .item.item3{
+		background-color: red;
+		flex-grow: 3;
+	}
+	
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item item1">1</div>
+		<div class="item item2">2</div>
+		<div class="item item3">3</div>
+	</div>
+</body>
+</html>
