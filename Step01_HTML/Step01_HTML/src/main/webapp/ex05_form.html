@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> form elements test</h1>
+<!--  action = " submit시 이동할 서버 주소" method = "get or post" 
+			주로 get은 조회할때, post는 DML할 때 사용-->
+<!-- <form action="http://www.naver.com" name="form" method="get"> -->
+<form action="http://www.naver.com" name="form" method="post">
+<label for="name">이름 : </label>
+	<input type = "text" name = "name" id="name" value="park" readonly="readonly"><br>
+	비번 : <input tpye = "password" name = "pwd" placeholder="비번 입력하세요" maxlength="5" required="required">
+	
+	<fieldset>
+		<legend>hobby</legend>
+		<!--  멀티선택, name이 모두 같아도 달라도 상관없음 -->
+			<input type="checkbox" name="hobby" value="hiking"> hiking
+			<input type="checkbox" name="hobby" value="swim"> swim
+			<input type="checkbox" name="hobby" value="fishing"> fishing
+			<input type="checkbox" name="hobby" value="play"> play
+			<input type="checkbox" name="hobby" value="music"> music
+			<input type="checkbox" name="hobby" value="eating"> eating
+			<input type="checkbox" name="hobby" value="eee"> eee
+	</fieldset>
+	
+	<fieldset>
+		<legend>sex</legend>
+		<!-- radio name이 같아야 기능 발휘 -->
+		<input type="radio" name="sex" value="1" checked="checked">M
+		<input type="radio" name="sex" value="2">W
+	</fieldset>
+	
+	JOB
+	<select name="job">
+		<option value="0">SELECTION</option>
+		<option value="1">developer</option>
+		<option value="2">docn</option>
+		<option value="3">qwe</option>
+		<option value="4">1234</option>
+	</select> <br>
+	
+	<textarea rows="4" cols="20" name="text"></textarea> <br>
+	Birth : <input type="date" name="birth">
+	
+	<input type="submit" value="submit">
+	<input type="reset" value="reset">
+	<!-- https://www.naver.com/?name=park&pwd=1234&hobby=swim&hobby=fishing&sex=1&job=1&text=222222&birth=2023-04-04 -->
+</form>
+
+</body>
+</html>
