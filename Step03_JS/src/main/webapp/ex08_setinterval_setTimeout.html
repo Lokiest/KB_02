@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 500px; height: 100px;
+		border: black 3px solid;
+	}
+</style>
+
+<script type="text/javascript">
+	onload = function() {
+		//현 날짜와 시간
+		
+	let a =	setInterval(function() {
+			let now = new Date();
+			document.getElementById("result").innerHTML = now.toLocaleString();
+		}, 1000);
+		
+		//pause
+		function intervalStop() {
+			clearInterval(a);
+		}
+		
+		document.getElementById("btn").onclick = intervalStop;
+	}
+	
+	
+	
+</script>
+
+</head>
+<body>
+<h1>clock tik tok</h1>
+<div id="result"></div>
+
+<input type="button" value="stop" id="btn">
+</body>
+</html>

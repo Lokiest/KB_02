@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>VAR vs LET vs CONST</h1>
+<script type="text/javascript">
+	//화면을 구성 = html 출력
+	document.write("<h3 style='color:red'> VAR를 이용해서 변수 선언하기 </h3>");
+	
+	var a;
+	var b = 10;
+	var c = 1.5;
+	var d = "ewr";
+	e = "ewr22";
+	
+	document.write("<h3>");
+	document.write("a = " + a + ", type = " + (typeof a) + "<br>");
+
+	document.write("b = " + b + ", type = " + (typeof b) + "<br>");
+
+	document.write("c = " + c + ", type = " + (typeof c) + "<br>");
+
+	document.write("e = " + e + ", type = " + (typeof e) + "<br>");
+
+	document.write("d = " + d + ", type = " + (typeof d) + "<br><hr>");
+
+	b = new Array(2,3,4);
+	d= "TSER";
+	
+	document.write("a = " + a + ", type = " + (typeof a) + "<br>");
+
+	document.write("b = " + b + ", type = " + (typeof b) + "<br>");
+
+	document.write("c = " + c + ", type = " + (typeof c) + "<br>");
+
+	document.write("e = " + e + ", type = " + (typeof e) + "<br>");
+
+	document.write("d = " + d + ", type = " + (typeof d) + "<br>");
+	document.write("</h3>");
+</script>
+</body>
+</html>

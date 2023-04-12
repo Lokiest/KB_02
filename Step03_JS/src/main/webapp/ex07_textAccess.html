@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 300px; height: 300px;
+		border: red solid 1px;
+		overflow: auto;
+	}
+</style>
+
+<script type="text/javascript">
+	onload = function() {
+		//이벤트 등록
+		let btnEle = document.getElementById("btn");
+		
+		/* btnEle.onclick = function() {
+			
+		} >>> 익명함수*/
+		
+		btnEle.onclick = btnCheck;
+	}
+	
+	//버튼을 클릭했을 때 호출될 함수
+	function btnCheck(e) {
+		// input에 값이 있는지 체크하고 값 있으면 값 출력, div에 넣기
+		let inputEle = document.querySelector("[name=input]");
+		//alert(inputEle.value);
+		if(inputEle.value=="") {
+			alert("입력하세요");
+			inpuEle.focus();
+			return false;
+		}
+		
+		//옮기기
+		let outEle = document.querySelector("[name=output]");
+		outEle.value = inputEle.value;
+		
+		// innerhtml : 마크업 사용, innertext : 문자열로 인식
+		document.querySelector("#result").innerHTML += "<h2>" + inputEle.value + "</h2>";
+		//document.querySelector("#result").innerText = inputEle.value;
+		
+		//submit 전송 기능 막는 방법
+		//return false;
+		
+		// 첫번째 박스 초기화
+		inputEle.value="";
+		inputEle.focus();
+		
+		
+		e.preventDefault();
+	}
+	
+</script>
+</head>
+<body>
+<h2> js에서 폼 요소 접근하기 </h2> <!-- form 안의 버튼은 submit이 디폴트 -->
+<form action="http://www.naver.com" method="get">
+	input : <input type="text" name="input"> <br>
+	output : <input type="text" name="output"> <br>
+	
+	<button id="btn">옮기기</button>
+</form>
+
+<hr>
+<div id="result"></div>
+</body>
+</html>

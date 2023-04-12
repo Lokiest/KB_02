@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	let a;
+	var b = "juho";
+	
+	document.write("<h2>");
+	document.write("a = " + a + " type of = " + (typeof a) + "<br>")
+	//템플릿 문자열 ``
+	document.write(`b = ${b}<br>`);
+	document.write("</h2>");
+	
+	//변수 선언의 위치 변경
+	//var b; >> 선언전에 사용 가능
+	//let a; >> 선언전에 사용 불가
+	
+	//var b = "~"; >> 동일한 이름 사용 가능
+	//let a >>> 동일한 이름 두번 선언 불가
+	
+	function test() {
+		var b = "local b";
+		name = "park"; // 함수 안에서 var 생략하면 전역변수
+		
+		document.write(`지역변수 b = ${b}<br>`);
+		document.write(`전역변수 this.b = ${this.b}<br>`);
+		
+		document.write(`전역변수 name = ${name}<br>`);
+	}
+	
+	test();
+	
+	document.write(`<hr>after function.. <p>`);
+	document.write(`b = ${b}<br>`);
+	document.write(`name = ${name}<br>`);
+	
+	/*function test2() {
+		document.write(`age = ${age} <hr>`);
+		var age = 20;
+		{
+			var age = 30;
+			document.write(`age = ${age} <hr>`);
+		}
+		
+		document.write(`age = ${age} <hr>`);
+	} */
+	
+	function test2() {
+
+		let age = 20;
+		{
+			let age = 30;
+			document.write(`age = ${age} <hr>`);
+		}
+		
+		document.write(`age = ${age} <hr>`);
+	}
+	
+	test2();
+	
+	const addr = "sun";
+	document.write(`addr = ${addr}<br>`);
+	addr = "seoul";
+</script>
+</body>
+</html>

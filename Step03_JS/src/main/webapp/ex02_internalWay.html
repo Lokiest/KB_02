@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test() {
+		alert("clicked!!");
+		alert("clicked!!");
+		alert("clicked!!");
+	}
+	
+</script>
+</head>
+<body>
+<h2>JS Start</h2>
+<h3 onclick="test()">Click!!</h3>
+
+<script type="text/javascript">
+document.querySelector("h2").onmouseover = function() {
+	this.style.border = "red double 5px";
+}
+document.querySelector("h2").addEventListener("mouseout", function(){
+	this.style.border = "none";
+});
+</script>
+</body>
+</html>
