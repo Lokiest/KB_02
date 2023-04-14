@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style>
+	div { background-color:pink; }
+</style>
+ <script src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#removeId").click(function(){
+			$("div").remove(); //div 자체가 날라감
+		});
+		
+		$("#emptyId").click(function(){
+			$("div").empty(); //div 틀은 살아있음
+			$("div").html("hi");
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>remove() 와 empty()</h1>
+	 <div>
+        <p>JavaScript</p>
+        <p>NodeJs</p>
+    </div>    
+	
+	<input type="button" id="removeId" value="remove" />
+    <input type="button" id="emptyId" value="empty" />
+    
+	
+</body>
+</html>

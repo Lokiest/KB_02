@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//alert(213123);
+		
+		//$("*").css("color", "red");
+		//$("li").css("font-family", "궁서체");
+		//$("*").css("fontFamily", "궁서체");
+		
+		/* $("h3, h4")
+		.css("border", "red solid 3px")
+		.css("background-color", "maroon")
+		.css("color", "white"); */
+		
+		/* $("h3").css({"border":"solid red 10px","color":"skyblue",
+					'background-color' : "maroon"}); */
+		
+		//$("#tag").css("textDecoration","underline");
+		
+		//$(".div").css({"border":"green dotted 10px"});
+		
+		//$("div ol li:eq(1)").css("color", "blue");
+		
+		//$("div ol li:lt(2)").css("color", "blue");
+		
+		//$("div ol li:gt(2)").css("color", "blue");
+		
+		//$("div ol li:odd").css("color", "blue");
+		
+		//$("div ol li:last").css("color", "blue");
+		
+		//$("div ol li:first").css("color", "blue");
+		
+		$("div ol li:not(:first)").css("color", "blue");
+	});
+</script>
+
+</head>
+<body>
+	
+<h3>jQuery 기본 selector</h3>
+<h4>웹 프로그래밍</h4>
+<div class="div">
+	<ol>
+     	<li>jsp</li>
+		<li id="tag">javaScript</li>
+		<li>jQuery</li>
+		<li>Ajax</li>
+	</ol>
+</div>
+	
+
+</body>
+</html>

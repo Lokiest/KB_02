@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$("#jumin1").on("keyup", function(){
+			//console.log("!@#");
+			numberCheck($(this));
+			
+			if($(this).val().length == 6) {
+				//커서이동
+				$("#jumin2").focus();
+			}
+		});
+		
+		//$("#jumin2").keyup().blur();
+		$("#jumin2").on({
+			keyup : function(){
+				numberCheck($(this));
+			},
+			blur : function() {
+				let ch = $(this).val().charAt(0);
+				console.log(ch);
+				if(ch=="1" || ch=="3") {
+					$("#man").prop("checked", true);
+				} else {
+					$("#woman").prop("checked", true);
+				}
+			}
+		})
+		
+		function numberCheck(obj){
+			let v = obj.val();
+			
+			//isNaN() function >> is not a number > result true : not number
+			if(isNaN(v)) {
+				alert("숫자만 입력 가능");
+				let sliceV = v.substr(0, v.length - 1);
+				obj.val(sliceV);
+			} else {
+				
+			}
+		}
+	});
+</script>
+</head>
+
+<body>
+  <h1>on 이벤트 </h1>
+  <h4>주민번호를 이용한 성별 체크</h4>
+  <form>
+   주민번호 : 
+<input type="text" id="jumin1" size="6"/> - <input type="text" id="jumin2" size="7" /> <p/>
+성별 : 
+<input type="radio" value="남자" id="man" disabled name="gender" checked="checked"> 남자
+<input type="radio" value="여자" id="woman" disabled name="gender"> 여자
+
+</form>
+</body>
+</html>
+
+
+
+
+

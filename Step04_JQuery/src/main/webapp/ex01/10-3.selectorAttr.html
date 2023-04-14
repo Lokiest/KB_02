@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style>
+	.input{border:red double 5px ; font-size:25px ; color:blue}	
+</style>
+<script src="../js/jquery-3.6.1.min.j"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$("[name=name]").css({
+			color : "red",
+			backgroundColor : "white"
+		});
+		
+		$("[value$=사]").css("color", "blue");
+	})
+	
+	/* $(function(){
+		$("[type]").css("border", "dotted 3px red");
+	}); */
+</script>
+
+
+
+</head>
+<body>
+ <h1>속성 selector</h1>	
+ <form>
+ 	이름 <input type="text" name="name" value="장희정"><p/>
+	ID <input type="text"><p/>
+	비번 <input type="password"><p/>
+	취미 : 
+	   <input type="checkbox"  name="hobby" value="등산">등산
+	   <input type="checkbox"  name="hobby" value="낚시">낚시
+	   <input type="checkbox"  name="hobby" value="수영">수영
+	<p/>
+	
+	<select name="job">
+	   <option value="회사원">회사원</option>
+	   <option value="개발자">개발자</option>
+	   <option value="전문직">전문직</option>
+	   <option value="회계사">회계사</option>
+	   <option value="의사">의사</option>	
+	</select>
+ </form>	
+
+</body>
+</html>

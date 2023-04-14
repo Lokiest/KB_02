@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#result").css({width: "200px", height: "150px", border : "red 1px dashed"});
+		
+		$("[type=text]")
+		.focus(function(){
+			$(this).css("background-color", "yellow");
+		})
+		.blur(function(){
+			$(this).css("background-color", "white");
+			
+			//text값 읽어서 div 영역에 추가
+			let name = $(this).val();
+			//console.log(name);
+			
+			let data = $("#result").html() + name + "<br>";
+			$("#result").html(data);
+			
+			$(this).val("");
+			$(this).focus();
+			
+		})
+	});
+</script>
+
+</head>
+<body>
+<h1>focus 와 blur 이벤트</h1>
+
+<form>
+   이름 : <input type="text" name="name">	
+ </form>
+ 
+ <p>
+ <div id="result"></div>
+
+</body>
+</html>
+
+
+
+
+
+

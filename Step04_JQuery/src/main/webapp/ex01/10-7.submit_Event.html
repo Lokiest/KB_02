@@ -1,0 +1,41 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#form").submit(function(){
+			//alert(132);
+			//값 있으면 체크하고 없으면 메세지 출력하고 커서 두기
+			if($("#id").val()==""){
+				alert("id");
+				return false
+			}
+			//모두 있으면 전송
+			
+		});
+	});
+</script>
+
+</head>
+<body>
+<h1>submit 이벤트</h1>
+
+<form id="form" name="form" action="http://www.daum.net">
+    아이디 : <input type="text" id="id" name="id"/> <br>
+   비밀번호 : <input type="text" id="pwd" name="pwd"/> <br>
+   <input type="submit" value="로그인"/>
+    <input type="reset" value="취소"/>
+ </form>	
+
+</body>
+</html>
+
+
+
+
+
+

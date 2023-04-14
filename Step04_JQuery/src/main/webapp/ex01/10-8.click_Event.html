@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("[value=확인]").click(function(){
+			let info = "hobby : ";
+			
+			$(":checkbox:checked").each(function(index, ele){
+				//alert(index + " = " + ele.value);
+				info += ele.value + " , ";
+			});
+			
+			info += "<br> 성별 : "; 
+			info += $(":radio:checked").val();
+			
+			$("div").html(info);
+			
+		});
+	})
+</script>
+</head>
+
+<body>
+	<h1>click 이벤트</h1>
+<form>
+	취미 : 
+	   <input type="checkbox"  name="hobby" value="등산">등산
+	   <input type="checkbox"  name="hobby" value="낚시">낚시
+	   <input type="checkbox"  name="hobby" value="수영">수영
+	   <input type="checkbox"  name="hobby" value="골프">골프
+	   <input type="checkbox"  name="hobby" value="축구">축구
+	   <input type="checkbox"  name="hobby" value="농구">농구
+	<p/>
+	성별 : 
+	 <input type="radio" name="gender" value="남자"/> 남자
+	 <input type="radio" name="gender" value="여자"/> 여자
+	
+	 <input type="button" value="확인"  />
+ </form>
+ 	
+<h2>선택 결과</h2>
+<div></div>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$("select[name=job]").change(function(){
+			//선택된 value 읽어오기
+			alert("this.selectedIndex = " + this.selectedIndex);
+			if(this.selectedIndex == 0) {
+				alert("직업을 선택하세요");
+				return;
+			}
+			
+			$("#result").html(`<h3>당신의 직업은 ${this.value} 입니다</h3>`);
+		});
+	});
+</script>
+</head>
+<body>
+<h1>change 이벤트</h1>
+
+<form>
+     <select name="job" >
+       <option value="0">--직업 선택--</option>
+	   <option value="회사원">회사원</option>
+	   <option value="개발자">개발자</option>
+	   <option value="전문직">전문직</option>
+	   <option value="회계사">회계사</option>
+	   <option value="의사">의사</option>	
+	</select>
+ </form>
+ 
+ <div id="result"></div>	
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#pwd").keyup(function(){
+			if($(this).val() == "" && $("pwdConfirm").val()==""){
+				$("#lblError").text("암호입력");
+				return ;
+			}
+			$("#lblError").text("");
+		});
+		
+		$("#pwdConfirm").keyup(function(){
+			if($(this).val() == $("#pwd").val()) {
+				$("#lblError")
+				.html("<b>EQUALS</b>")
+				.css("color", "skyblue");
+			} else {
+				$("#lblError")
+				.html("<b>NOT EQUALS</b>")
+				.css("color", "red");
+			}
+		});
+	});
+</script>
+
+
+</head>
+
+<body>
+  <h1>keyup 이벤트</h1>
+  <table style="border: 1px solid skyblue;">
+        <tr>
+            <td>암호:</td>
+            <td><input type="password" id="pwd" size="20"></td>
+        </tr>
+        <tr>
+            <td>암호확인:</td>
+            <td><input type="password" id="pwdConfirm" size="20"></td>
+        </tr>
+  </table>
+    <div id="lblError">암호를 입력하시오.</div>
+
+</body>
+</html>
+
+
+
+
+

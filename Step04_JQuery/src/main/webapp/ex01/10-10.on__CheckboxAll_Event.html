@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+
+	//on함수는 정적 또는 동적 요소에 이벤트 적용 가능
+	$(function(){
+		$("#chkAll").on("click", function(){
+			//alert(1);
+			$(":checkbox").prop("checked", this.checked);
+			
+			if(this.checked) {
+				$("span").text("선택해지");
+			} else {
+				$("span").text("전체선택");
+			}
+		})
+	});
+</script>
+</head>
+
+<body>
+  <h1>on 이벤트 </h1>
+  <h4>checkbox를 이용한 전체 선택</h4>
+  <form>
+    <input type="checkbox" id="chkAll" /><span>전체선택</span><p>
+       <div id="subCheck">
+       
+        <input type="checkbox" checked="checked" />C#
+        <input type="checkbox"  />HTML5
+        <input type="checkbox"  />Java
+        <input type="checkbox"  />JQuery
+        <input type="checkbox"  />JavaScript
+        <input type="checkbox"  />Spring
+        <input type="checkbox"  />JPA
+        <input type="checkbox"  />MyBatis
+      </div>
+</form>
+</body>
+</html>
+
+
+
+
+
