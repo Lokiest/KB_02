@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>form get</title>
+    <style>
+        button {
+            height: 26px
+        }
+    </style>
+</head>
+<body>
+
+<form action="">
+    <h4>기본 정보</h4>
+    <label for="name">이름</label><br>
+    <input id="name" type="text"/><br>
+    <label for="email">e-mail</label><br>
+    <input id="email" type="email"/><br>
+
+    <h4>성별</h4>
+    <input id="male" type="radio" name="gender" value="M"><label for="male">남</label>
+    <input id="female" type="radio" name="gender" value="F" checked><label for="female">여</label><br>
+
+    <h4>취미</h4>
+    <input id="movie" type="checkbox" name="hobby" value="movie">
+    <label for="movie">영화</label>
+    <input id="sport" type="checkbox" name="hobby" value="sport" checked>
+    <label for="sport">스포츠</label>
+    <input id="music" type="checkbox" name="hobby" value="music">
+    <label for="music">음악</label>
+
+    <h4>선호하는 재테크</h4>
+    <select name="favorite" id="favorite" multiple> <!-- multiple -->
+        <option value="SV">저축</option>
+        <option value="ST" selected>주식</option>
+        <option value="PS">연금</option>
+    </select>
+
+    <h4>기타</h4>
+    <textarea name="desc" id="desc" cols="30" rows="5"></textarea>
+</form>
+
+<hr>
+<div id="userValueDiv">이곳에 사용자가 입력하거나 선택한 항목의 값을 보여준다.</div>
+
+<hr>
+<label>입력 값 가져오기</label>
+<button id="getName">이름</button>
+<button id="getEmail">e-mail</button>
+<button id="getDesc">기타</button>
+<br><br>
+
+<label>성별 가져오기</label>
+<button id="getGender">선택된 성별</button>
+<button id="getMale">남 선택 여부</button>
+<button id="getFemale">여 선택 여부</button>
+<br><br>
+
+<label>취미 가져오기</label>
+<button id="getHobby">선택된 취미</button>
+<button id="getMovie">영화 선택 여부</button>
+<button id="getSport">스포츠 선택 여부</button>
+<button id="getMusic">음악 선택 여부</button>
+<br><br>
+
+<label>선호하는 재테크 가졍오기</label>
+<button id="getFavoriteOne">1개 선택</button>
+<button id="getFavoriteMultiple">multiple 선택</button>
+<button id="getSaving">저축 선택 여부</button>
+<button id="getStock">주식 선택 여부</button>
+<button id="getPension">연금 선택 여부</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    function print(str) {
+        $("#userValueDiv").html(`<p>${str}</p>`);
+    }
+    
+    
+  /*  function optSelected(obj,text) {
+        obj.each(function () {
+            if($(this).text()===text)return true;
+        })
+        return false;
+    }*/
+    
+    $(function () {
+
+        // 아래 기술된 내용에 맞게 코드를 작성하세요.
+
+        // 입력 값 가져오기
+        // 각 버튼에 표시된 입력 항목의 값을 위 userValueDiv 에 보여준다.
+
+        // 기본 정보 - 이름
+        $('#getName').on('click', function () {
+            print($('#name').val())
+        })
+
+        // 기본 정보 - 이메일
+        $('#getEmail').on('click', function () {
+            print($('#email').val())
+        })
+
+        // 기타
+        $('#getDesc').on('click', function () {
+            print($('#desc').val())
+        })
+
+        // 성별
+
+        // 선택된 성별
+        $('#getGender').on('click', function () {
+            //print( $('input[type="radio"][name="gender"][checked]').next().text() );
+        	//print(  $(':radio:checked').next().text() );
+        	print(  $(':radio:checked').val());
+        })
+        
+        
+        // 남 체크하기
+        // true, false 문자열로 표시
+        $('#getMale').on('click', function () {
+            print( $('#male').prop('checked') );
+        })
+
+        // 여 체크하기
+        $('#getFemale').on('click', function () {
+            print($('#female').prop('checked'));
+        })
+
+        // 취미
+
+        // 선택된 취미
+        $('#getHobby').on('click',function () {
+            let str = "";
+            $(':checkbox:checked').each(function (index ,item){
+                 str+=`${$(this).next().text()} `;
+            })
+            
+            print(str);
+        })
+        
+
+        // 영화 선택 여부
+        $('#getMovie').on('click', function () {
+        	//alert($('#movie').is(":checked"))
+        	//alert( $('#movie').prop("checked") ) 
+        	
+            print( $('#movie').is(":checked") );
+        })
+
+        // 스포츠 선택 여부
+        $('#getSport').on('click', function () {
+            print( $('#sport').is(":checked") );
+        })
+
+
+        // 음악 선택 여부
+        $('#getMusic').on('click', function () {
+            print( $('#music').is(":checked") );
+        })
+
+
+        // 선호하는 재테크
+        // with multiple : 각각 하나씩 제어
+        // without multiple : selected = true 가 발생되는 항목이 선택됨
+
+        // 한 개 선택
+        $('#getFavoriteOne').on('click',function () {
+            print( $('#favorite').val() )
+        })
+
+
+        // multiple 선택
+        $('#getFavoriteMultiple').on('click',function () {
+        	//console.dir($('#favorite option:selected'))
+            
+        	let str="";
+           $('#favorite option:selected').each(function(index, item){
+        	   //alert(item.value)
+        	   str+=$(this).val() +" ";
+           });
+           
+            print(str);  
+        });
+        
+
+        // 저축 선택 여부
+        $('#getSaving').on('click',function () {
+            //print( $('#favorite>option[value="SV"]').prop("selected"))
+            print( $('#favorite>option[value="SV"]').is(":selected")) 
+        })
+
+        // 주식 선택 여부
+        $('#getStock').on('click',function () {
+            print($('#favorite>option[value="ST"]').prop("selected"))
+        })
+
+
+        // 연금 선택 여부
+        $('#getPension').on('click',function () {
+            print($('#favorite>option[value="PS"]').prop("selected"))
+        })
+
+    })
+</script>
+</body>
+</html>
