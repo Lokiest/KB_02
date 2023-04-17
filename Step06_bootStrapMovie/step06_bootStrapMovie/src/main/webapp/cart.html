@@ -30,25 +30,43 @@
   		//로딩되면 localStorage에 있는 정보 조회해서 table에 추가하기
   		function getInfo() {
   			let len = localStorage.length;
+  			let str = "";
+  			let totalPrice = 0;
+  			
   			for(let i=0;i<len;i++){
   				let key = localStorage.key(i);
   				let value = localStorage.getItem(key);
   				//alert(key + "    " + value);
   				let v = value.split(",");
   				
-  				str+=`<tr>`;
-  				str+=`<td><img src='img/${v[1]}' alt='' class='poster'></td>`;
+  				str+=`<tr class='align-middle'>`;
+  				str+=`<td><img src='img/${v[1]}' alt='${v[0]} image' class='poster'></td>`;
   				str+=`<td>${key}</td>`;
   				str+=`<td>${v[0]}</td>`;
   				str+=`<td>${v[2]}</td>`;
-  				str+=`<td><button type='button'>삭제</button></td>`;
+  				str+=`<td><button type='button' class='btn btn-danger' name='delItem' data-localStorageId="${key}">삭제</button></td>`;
   				str+=`</tr>`;
+  				
+  				totalPrice += window.parseInt(v[2]);
   			}
   			
   			//table의 처선째 행 뒤에 추가
   			$("#content").html(str);
+  			$("#price").html("<b>총 예매 가격 : "+totalPrice+"</b>")
   		}
   		
+  		$(document).on("click", "[name=delItem]", function(){
+  			//alert(2);
+  			if(confirm("삭제하실겁니까?")){
+  				/* let key = $(this).attr("data-localStorageId");
+  				alert(key); */
+  				
+  				let key = $(this).parent().parent().find("td:eq(1)").text();
+  				//alert(key);
+  				
+  				localStorage.removeItem(key);
+  			}
+  		});
   		
   		
   		getInfo();
@@ -94,7 +112,9 @@
     </tr> -->
   </tbody>
   <tfoot>
-  	<th colspan="5" class="table-primary">총 결제금액 : 0 원</th>
+	  <tr>
+	  	<th colspan="5" class="table-primary" id="price">총 결제금액 : 0 원</th>
+	  </tr>
   </tfoot>
 </table>
 
