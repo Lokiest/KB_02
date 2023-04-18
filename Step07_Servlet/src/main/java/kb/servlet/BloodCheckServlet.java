@@ -3,12 +3,13 @@ package kb.servlet;
 import java.io.IOException;
 import java.net.URLEncoder;
 
-import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class BloodCheckServlet
@@ -21,6 +22,10 @@ public class BloodCheckServlet extends HttpServlet {
 		
 		//request방식으로 전송되는 한글 인코딩
 		request.setCharacterEncoding("UTF-8"); //filter로 대체
+		
+		HttpSession session = request.getSession();
+		
+		ServletContext application  = request.getServletContext();
 		
 		//전송된 데이터 받기
 		String name = request.getParameter("name");

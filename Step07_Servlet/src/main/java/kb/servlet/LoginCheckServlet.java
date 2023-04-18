@@ -1,6 +1,7 @@
 package kb.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -51,8 +52,20 @@ public class LoginCheckServlet extends HttpServlet {
 			//customer 가지고 이동
 			request.getRequestDispatcher("loginOK.jsp").forward(request, response);
 		} else {
-			//실패시 오류 메세지 출력, form으로 이동
-			response.sendRedirect("LoginForm.html");
+//			response.setContentType("text/html; charset=UTF-8");
+//			//실패시 오류 메세지 출력, form으로 이동
+//			PrintWriter out = response.getWriter();
+//			out.print("<script>");
+//			out.println("alert('정보를 확인해주세요');");
+//			//out.println("location.href='LoginForm.html'");
+//			out.println("history.back();"); //뒤로가기
+//			out.print("</script>");
+			
+			//response.sendRedirect("LoginForm.html");
+			
+			//error.jsp로 보내기
+			request.setAttribute("errMsg", "로그인 정보 확인");
+			request.getRequestDispatcher("/error.jsp").forward(request, response);
 		}
 		
 	}

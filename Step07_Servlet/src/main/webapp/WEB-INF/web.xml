@@ -9,30 +9,4 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  
-  <!-- servlet create -->
-  <servlet>
-  	<servlet-name>lifeCycle</servlet-name>
-  	<servlet-class>kb.servlet.ServletLifeCycle</servlet-class>
-  	<load-on-startup>1</load-on-startup> <!-- tomcat 시작될 때 서블릿이 생성 -->
-  	<!-- load on 없으면 사용자 요청 있을 때 만들기 때문에 대부분 사전 초기화를 위해 미리 만듦 -->
-  </servlet>
-  
-  <!-- url 주소에서 contextPath/life 요청하면 lifeCycle 호출 -->
-  <servlet-mapping>
-  	<servlet-name>lifeCycle</servlet-name>
-  	<url-pattern>/life</url-pattern>
-  </servlet-mapping>
-  
-  <!-- HobbyCheckServlet  -->
-  <servlet>
-  	<servlet-name>hobbyCheck</servlet-name>
-  	<servlet-class>kb.servlet.HobbyCheckServlet</servlet-class>
-  	<load-on-startup>1</load-on-startup>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>hobbyCheck</servlet-name>
-  	<url-pattern>/Check</url-pattern>
-  </servlet-mapping>
 </web-app>
